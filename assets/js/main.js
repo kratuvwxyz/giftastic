@@ -1,110 +1,143 @@
-	var movies = ["You know nothing, Jon Snow", "Winter is coming!"];
+	$(document).ready(function() {
 
-	// Function for displaying movie data
-	function renderButtons() {
-	// Deleting the movie buttons prior to adding new movie buttons
-	// (this is necessary otherwise we will have repeat buttons)
-	$("#movies-view").empty();
+	    var movies = ["Winter is coming!"];
 
-	// Looping through the array of movies
-	for (var i = 0; i < movies.length; i++) {
+	    var add = -5;
+	    var newAdd = add + 5;
 
-	// Then dynamicaly generating buttons for each movie in the array.
-	// This code $("<button>") is all jQuery needs to create the start and end tag. (<button></button>)
-	var a = $("<button>");
-	// Adding a class
-	a.addClass("btn btn-outline-warning m-1");
-	// Adding a data-attribute with a value of the movie at index i
-	a.attr("data-game", movies[i]);
-	// Providing the button's text with a value of the movie at index i
-	a.text(movies[i]);
-	// Adding the button to the HTML
-	$("#movies-view").append(a);
-		}
-	}
+	    // function to make buttons and add to page
+	    function populateButtons(arrayToUse, classToAdd, areaToAddTo) {
+	        $(areaToAddTo).empty();
 
-	// This function handles events where one button is clicked
-	$("#add-movie").on("click", function(event) {
-	// event.preventDefault() prevents the form from trying to submit itself.
-	// We're using a form so that the user can hit enter instead of clicking the button if they want
-	event.preventDefault();
+	        for (var i = 0; i < arrayToUse.length; i++) {
+	            var a = $("<button>");
+	            a.addClass(classToAdd);
+	            a.attr("data-game", arrayToUse[i]);
+	            a.text(arrayToUse[i]);
+	            $(areaToAddTo).append(a);
+	        }
 
-	// This line will grab the text from the input box
-	var movie = $("#movie-input").val().trim();
-	// The movie from the textbox is then added to our array
-	movies.push(movie);
+	    }
 
-	// calling renderButtons which handles the processing of our movie array
-	renderButtons();
+	    $(document).on("click", ".search", function(event) {
+
+	        if (newAdd < 20) {
+	            add += 5;
+	            newAdd = add + 5;
+	        } else {
+	            add = 0;
+	            newAdd = add + 5;
+	        }
+
+
+	        event.preventDefault();
+
+	        $("#gifs-appear-here").empty();
+
+	        var GOT = $(this).attr("data-game");
+
+	        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + GOT + "&api_key=dc6zaTOxFJmzC&limit=150";
+
+	        $.ajax({
+	            url: queryURL,
+	            method: "GET"
+	        }).then(function(res) {
+	            console.log(queryURL);
+	            console.log(res);
+
+	            var results = res.data;
+
+	            for (var i = add; i < newAdd; i++) {
+
+	                var animated = results[i].images.fixed_height.url;
+	                var still = results[i].images.fixed_height_still.url;
+
+	                var main = $("<div>").addClass("specialmain");
+
+	                var gameGifDiv = $("<div>").addClass("figure");
+
+	                var gameGifImage = $("<img>").addClass("card awesomeImage");
+	                gameGifImage.attr("src", still);
+	                gameGifImage.attr("data-still", still);
+	                gameGifImage.attr("data-animate", animated);
+	                gameGifImage.attr("data-state", "still");
+
+	                var p = $("<p>").text("Rating: " + results[i].rating);
+
+	                var s = $("<p>").text("Search: " + GOT);
+
+	                gameGifDiv.append(p);
+	                gameGifDiv.append(gameGifImage);
+	                gameGifDiv.append(s);
+	                main.append(gameGifDiv);
+
+	                $("#gifs-appear-here").prepend(main);
+	            }
+	        });
+	    });
+
+	    $(document).on("click", ".card", function() {
+
+	        var state = $(this).attr("data-state");
+
+	        if (state === "still") {
+	            $(this).attr("src", $(this).attr("data-animate"));
+	            $(this).attr("data-state", "animate");
+	        } else {
+	            $(this).attr("src", $(this).attr("data-still"));
+	            $(this).attr("data-state", "still");
+	        }
+	    });
+
+	    $("#add-movie").on("click", function(event) {
+	        event.preventDefault();
+
+	        var movie = $("#movie-input").val().trim();
+
+	        for (var i = 0; i < movies.length; i++) {
+	            if (movie === movies[i] || movie === "") {
+	                alert("Sorry Your Search Either Empty Or Is Already In The Search Results, Please Check!");
+	                return false;
+	            }
+	        }
+
+
+	        console.log(typeof(movie));
+	        console.log(movie);
+
+	        movies.push(movie);
+	        console.log(movies);
+
+	        populateButtons(movies, "btn btn-outline-light search m-1", "#movies-view");
+
+
+	    });
+
+	    populateButtons(movies, "btn btn-outline-light search m-1", "#movies-view");
+
+
 	});
 
-	// Calling the renderButtons function at least once to display the initial list of movies
-		renderButtons();
-//	$(renderButtonClick).on("click", function(event){
-//		event.preventDefault();
-//	});
-		
-	
-
-	// Adding click event listen listener to all buttons
-	$("button").on("click", function(event) {
-		
 
 
-			// event.preventDefault() can be used to prevent an event's default behavior.
-			// Here, it prevents the submit button from trying to submit a form when clicked
-			event.preventDefault();
 
-			  // Grabbing and storing the data-GOT property value from the button
-			  var GOT = $(this).attr("data-game");
+	/*
 
-			  // Constructing a queryURL using the GOT name
-			  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-				GOT + "&api_key=dc6zaTOxFJmzC&limit=12";
+	    function renderButtons() {
 
-			  // Performing an AJAX request with the queryURL
-			  $.ajax({
-				url: queryURL,
-				method: "GET"
-			  })
+	        $("#movies-view").empty();
 
-			// After data comes back from the request
-			.then(function(response) {
-			  console.log(queryURL);
-			  console.log(response);
+	        for (var i = 0; i < movies.length; i++) {
+	            var a = $("<button>");
+	            a.addClass("btn btn-outline-light m-1 search");
+	            console.log(movies[i]);
+	            a.attr("data-game", movies[i]);
+	            a.text(movies[i]);
 
-				// storing the data from the AJAX request in the results variable
-				var results = response.data;
+	            $("#movies-view").append(a);
+	        }
+	    }
 
-				// Looping through each result item
-				for (var i = 0; i < 12; i++) {
+	    
 
-					//Creating main div container
-					var main = $("<div>").addClass("specialmain");
-
-					// Creating and storing a div tag
-					var gameGifDiv = $("<div>").addClass("figure");
-
-					// Creating and storing an image tag
-					var gameGifImage = $("<img>").addClass("card awesomeImage");
-
-					// Setting the src attribute of the image to a property pulled off the result item
-					gameGifImage.attr("src", results[i].images.fixed_width.url);
-
-					// Creating a paragraph tag with the result item's rating
-					var p = $("<p>").text("Rating: " + results[i].rating);
-					var s = $("<p>").text("Search: " + GOT);
-
-					// Appending the paragraph and image tag to the gameGifDiv
-
-					gameGifDiv.append(p);
-					gameGifDiv.append(gameGifImage);
-					gameGifDiv.append(s);
-					main.append(gameGifDiv);
-
-				// Prependng the gameGifDiv to the HTML page in the "#gifs-appear-here" div
-				$("#gifs-appear-here").prepend(main);
-
-			  }
-			});
-		});
+	*/
