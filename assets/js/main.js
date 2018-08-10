@@ -21,7 +21,7 @@
 
 	    $(document).on("click", ".search", function(event) {
 
-	        if (newAdd < 20) {
+	        if (newAdd < 25) {
 	            add += 5;
 	            newAdd = add + 5;
 	        } else {
@@ -29,6 +29,7 @@
 	            newAdd = add + 5;
 	        }
 
+	        $(".hideSec").css("display", "none");
 
 	        event.preventDefault();
 

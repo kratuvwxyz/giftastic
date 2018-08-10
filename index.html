@@ -80,6 +80,20 @@
             font-family: 'IBM Plex Serif', serif;
         }
         
+        .stiky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0px;
+            z-index: 20;
+        }
+        
+        .stiky2 {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 72px;
+            z-index: 21;
+        }
+        
         footer {
             background-image: url(https://raw.githubusercontent.com/kratuvwxyz/assets2/master/images/background/pattern/confectionary.png);
             background-color: khaki;
@@ -117,30 +131,30 @@
   Document Wrapper
 ::::::::::::::::::::::::::::::::::::::::-->
 
-    <div class="row bg-dark">
+    <div class="row bg-dark hideSec">
         <header class="bg-dark m-5" style="height: 100px;">
             <a href="#">
                 <img src="assets/images/GOTicon.svg" height="100%">
             </a>
         </header>
-        <section class="bg-dark p-3" style="top: 0;">
-            <nav class="navbar navbar-dark bg-dark">
-                <form class="form-inline" id="gameOfGifronNav">
-                    <button data-game="Game of Thrones" class="btn btn-outline-light search m-1" type="button">Game Of Thrones</button>
-                    <button data-game="Game of Thrones season 1" class="btn btn-outline-light search m-1" type="button">Season 1</button>
-                    <button data-game="Game of Thrones season 2" class="btn btn-outline-light search m-1" type="button">Season 2</button>
-                    <button data-game="Game of Thrones season 3" class="btn btn-outline-light search m-1" type="button">Season 3</button>
-                    <button data-game="Game of Thrones season 4" class="btn btn-outline-light search m-1" type="button">Season 4</button>
-                    <button data-game="Game of Thrones season 5" class="btn btn-outline-light search m-1" type="button">Season 5</button>
-                    <button data-game="Game of Thrones season 6" class="btn btn-outline-light search m-1" type="button">Season 6</button>
-                    <button data-game="Game of Thrones season 7" class="btn btn-outline-light search m-1" type="button">Season 7</button>
-                    <button data-game="Game of Thrones season 8" class="btn btn-outline-light search m-1" type="button">Season 8</button>
-                </form>
-                <span class="mx-1 text-muted">Click again to view more!</span>
-            </nav>
-        </section>
     </div>
-    <div class="row bg-danger">
+    <div class="row bg-dark stiky">
+        <nav class="navbar navbar-dark bg-dark p-3">
+            <form class="form-inline" id="gameOfGifronNav">
+                <button data-game="Game of Thrones" class="btn btn-outline-light search m-1" type="button">Game Of Thrones</button>
+                <button data-game="Game of Thrones season 1" class="btn btn-outline-light search m-1" type="button">Season 1</button>
+                <button data-game="Game of Thrones season 2" class="btn btn-outline-light search m-1" type="button">Season 2</button>
+                <button data-game="Game of Thrones season 3" class="btn btn-outline-light search m-1" type="button">Season 3</button>
+                <button data-game="Game of Thrones season 4" class="btn btn-outline-light search m-1" type="button">Season 4</button>
+                <button data-game="Game of Thrones season 5" class="btn btn-outline-light search m-1" type="button">Season 5</button>
+                <button data-game="Game of Thrones season 6" class="btn btn-outline-light search m-1" type="button">Season 6</button>
+                <button data-game="Game of Thrones season 7" class="btn btn-outline-light search m-1" type="button">Season 7</button>
+                <button data-game="Game of Thrones season 8" class="btn btn-outline-light search m-1" type="button">Season 8</button>
+            </form>
+            <span class="mx-1 text-muted">Click again to view more!</span>
+        </nav>
+    </div>
+    <div class="row bg-danger stiky2">
         <div class="col-md-12">
             <nav class="navbar navbar-danger bg-danger">
                 <form class="form-inline" id="movie-form">
@@ -193,7 +207,7 @@
             };
 
             function scrollFunction() {
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
                     document.getElementById("footerCopyright").style.bottom = "-140px";
                 } else {
                     document.getElementById("footerCopyright").style.bottom = "0px";
