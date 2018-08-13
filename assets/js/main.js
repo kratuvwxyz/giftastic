@@ -15,6 +15,7 @@
 	            a.attr("data-game", arrayToUse[i]);
 	            a.text(arrayToUse[i]);
 	            $(areaToAddTo).append(a);
+	            console.log(a);
 	        }
 
 	    }
