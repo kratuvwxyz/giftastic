@@ -4,53 +4,48 @@ body {
 }
 */
 
-body	{
-	background: url("../images/ignasi_pattern_s.png") repeat rgba(0, 255, 255, 0.5);
-	backface-visibility: .5;
+body {
+    background: url("../images/ignasi_pattern_s.png") repeat rgba(0, 255, 255, 0.5);
+    backface-visibility: .5;
 }
 
-.main{
-background: url("../images/ignasi_pattern_s.png") repeat;	
-width: 100%;
-margin: 20px auto;	
-/* padding: 50px;		 */
--moz-column-width: 220px;
--webkit-column-width: 220px;
-column-width: 220px;
-
--moz-column-count: 3;
--webkit-column-count: 3;
-column-count: 3;
-
--moz-column-gap: 0px;
--webkit-column-gap: 0px;
-column-gap: 0px;
-
-
-}
-.awesomeImage{
-width: 100%;
-height: auto;
-margin:5px 0;
-
-}	
-
-.specialmain{
-margin: 0 10px 20px 10px;
+.main {
+    background: url("../images/ignasi_pattern_s.png") repeat;
+    width: 100%;
+    margin: 20px auto;
+    /* padding: 50px;		 */
+    -moz-column-width: 220px;
+    -webkit-column-width: 220px;
+    column-width: 220px;
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+    -moz-column-gap: 0px;
+    -webkit-column-gap: 0px;
+    column-gap: 0px;
 }
 
-.figure{
-width: 100%;
-background-color: rgba(108,117,125,.2);
-text-decoration: none;
-padding: 5px;
-color:#176976;
-box-shadow: 0 1px 3px rgba(0,0,0, .12), 0 1px 2px rgba(0,0,0, .24);
-display: inline-block;
-		
-transition: all .3s cubic-bezier(0.25, .8, .25, 1);
-
+.awesomeImage {
+    width: 100%;
+    height: auto;
+    margin: 5px 0;
 }
+
+.specialmain {
+    margin: 0 10px 20px 10px;
+}
+
+.figure {
+    width: 100%;
+    background-color: rgba(108, 117, 125, .2);
+    text-decoration: none;
+    padding: 5px;
+    color: #176976;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+    display: inline-block;
+    transition: all .3s cubic-bezier(0.25, .8, .25, 1);
+}
+
 
 /*
 .main:hover .figure:not(:hover){
@@ -61,4 +56,3 @@ opacity: .8;
 box-shadow: 0 2px 5px rgba(0, 0, 0, .25), 0 2px 5px rgba(0, 0, 0, .20);
 }			
 */
-

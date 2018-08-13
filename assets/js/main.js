@@ -2,8 +2,8 @@
 
 	    var movies = ["Winter is coming!"];
 
-	    var add = -5;
-	    var newAdd = add + 5;
+	    var add = -6;
+	    var newAdd = add + 6;
 
 	    // function to make buttons and add to page
 	    function populateButtons(arrayToUse, classToAdd, areaToAddTo) {
@@ -21,12 +21,12 @@
 
 	    $(document).on("click", ".search", function(event) {
 
-	        if (newAdd < 25) {
-	            add += 5;
-	            newAdd = add + 5;
+	        if (newAdd < 24) {
+	            add += 6;
+	            newAdd = add + 6;
 	        } else {
 	            add = 0;
-	            newAdd = add + 5;
+	            newAdd = add + 6;
 	        }
 
 	        $(".hideSec").css("display", "none");
@@ -37,7 +37,7 @@
 
 	        var GOT = $(this).attr("data-game");
 
-	        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + GOT + "&api_key=dc6zaTOxFJmzC&limit=150";
+	        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + GOT + "&api_key=dc6zaTOxFJmzC&limit=24";
 
 	        $.ajax({
 	            url: queryURL,
@@ -97,7 +97,7 @@
 
 	        for (var i = 0; i < movies.length; i++) {
 	            if (movie === movies[i] || movie === "") {
-	                alert("Sorry Your Search Either Empty Or Is Already In The Search Results, Please Check!");
+	                alert("Sorry, Either Your Search Is Empty Or IT Is Already Placed In The Search Results, Please Check!");
 	                return false;
 	            }
 	        }
@@ -111,34 +111,10 @@
 
 	        populateButtons(movies, "btn btn-outline-light search m-1", "#movies-view");
 
-
 	    });
 
 	    populateButtons(movies, "btn btn-outline-light search m-1", "#movies-view");
 
 
+
 	});
-
-
-
-
-	/*
-
-	    function renderButtons() {
-
-	        $("#movies-view").empty();
-
-	        for (var i = 0; i < movies.length; i++) {
-	            var a = $("<button>");
-	            a.addClass("btn btn-outline-light m-1 search");
-	            console.log(movies[i]);
-	            a.attr("data-game", movies[i]);
-	            a.text(movies[i]);
-
-	            $("#movies-view").append(a);
-	        }
-	    }
-
-	    
-
-	*/

@@ -87,13 +87,6 @@
             z-index: 20;
         }
         
-        .stiky2 {
-            position: -webkit-sticky;
-            position: sticky;
-            top: 72px;
-            z-index: 21;
-        }
-        
         footer {
             background-image: url(https://raw.githubusercontent.com/kratuvwxyz/assets2/master/images/background/pattern/confectionary.png);
             background-color: khaki;
@@ -130,16 +123,15 @@
     <!--:::::::::::::::::::::::::::::::::::::::
   Document Wrapper
 ::::::::::::::::::::::::::::::::::::::::-->
-
-    <div class="row bg-dark hideSec">
-        <header class="bg-dark m-5" style="height: 100px;">
-            <a href="#">
-                <img src="assets/images/GOTicon.svg" height="100%">
+    <div class="bg-dark hideSec">
+        <div class="bg-dark">
+            <a href="index.html" class="">
+                <img src="assets/images/GOTicon-01.svg" alt="" width="100%" class="p-3" style="max-width: 900px;">
             </a>
-        </header>
+        </div>
     </div>
     <div class="row bg-dark stiky">
-        <nav class="navbar navbar-dark bg-dark p-3">
+        <nav class="col-md-12 navbar navbar-dark bg-dark p-3 m-3">
             <form class="form-inline" id="gameOfGifronNav">
                 <button data-game="Game of Thrones" class="btn btn-outline-light search m-1" type="button">Game Of Thrones</button>
                 <button data-game="Game of Thrones season 1" class="btn btn-outline-light search m-1" type="button">Season 1</button>
@@ -150,16 +142,14 @@
                 <button data-game="Game of Thrones season 6" class="btn btn-outline-light search m-1" type="button">Season 6</button>
                 <button data-game="Game of Thrones season 7" class="btn btn-outline-light search m-1" type="button">Season 7</button>
                 <button data-game="Game of Thrones season 8" class="btn btn-outline-light search m-1" type="button">Season 8</button>
+                <span class="text-muted m-2">Click again to view more!</span>
             </form>
-            <span class="mx-1 text-muted">Click again to view more!</span>
         </nav>
-    </div>
-    <div class="row bg-danger stiky2">
         <div class="col-md-12">
             <nav class="navbar navbar-danger bg-danger">
                 <form class="form-inline" id="movie-form">
                     <input class="form-control mr-sm-2" type="search" id="movie-input" placeholder="You know nothing..." aria-label="Search">
-                    <i class="p-2 fa fa-search" id="add-movie" type="submit"></i>
+                    <i class="m-1 p-2 fa fa-search" id="add-movie" type="submit"> Search</i>
                 </form>
                 <form class="form-inline" id="emptyButton">
                     <strong class="text-warning">Your Search Results: &#160;&#160;</strong>
@@ -168,6 +158,7 @@
             </nav>
         </div>
     </div>
+
     <div class="p-3 bg-info main" id="gifs-appear-here"></div>
 
     <!--:::::::::::::::::::::::::::::::::::::::
@@ -207,10 +198,10 @@
             };
 
             function scrollFunction() {
-                if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
-                    document.getElementById("footerCopyright").style.bottom = "-140px";
-                } else {
+                if (document.body.scrollBottom < 0 || document.documentElement.scrollBottom < 0) {
                     document.getElementById("footerCopyright").style.bottom = "0px";
+                } else {
+                    document.getElementById("footerCopyright").style.bottom = "-140px";
                 }
             }
 
