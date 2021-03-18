@@ -1,0 +1,34 @@
+body {
+  background: url("./images/ignasi_pattern_s.png") repeat;
+}
+
+.main {
+  width: 100%;
+  margin: 20px auto;
+  -moz-column-width: 220px;
+  -webkit-column-width: 220px;
+  column-width: 220px;
+  -moz-column-count: 3;
+  -webkit-column-count: 3;
+  column-count: 3;
+  -moz-column-gap: 0px;
+  -webkit-column-gap: 0px;
+  column-gap: 0px;
+}
+
+.awesomeImage {
+  width: 100%;
+  height: auto;
+}
+
+.specialmain {
+  margin: 0 10px 20px 10px;
+}
+
+.figure {
+  width: 100%;
+  text-decoration: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  display: inline-block;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
