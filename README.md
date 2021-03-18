@@ -4,6 +4,8 @@ Get the latest Game of Thrones gifs from this Giphy.com.
 
 ### How to play?
 
+![alt text](./images/GameOfGif-black.svg "Game Of Gifrones")
+
 - Click navigation buttons to generate your gifs. 
 - Each search gets you 24 gifs.
 - Once you get a gif, it is in static mode. You have to click it to play.
