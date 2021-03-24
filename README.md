@@ -2,7 +2,7 @@
 
 Get the latest Game of Thrones gifs or search your own from Giphy API.
 
-### How to play?
+<img src="./SS1.png" alt="Screen Shot" width="500">
 
 - Each search gets you 24 gifs.
 - Once you get a gif, it is on static mode. You have to click it to play.
