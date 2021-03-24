@@ -22,22 +22,31 @@
                             
 /* SITE */
 
-    Version: 2103181548
+Version:
 
-                            
-    Last update: 21/03/18
+    - 2103181548
+    ✔ Last Update @done (March 24th 2021, 14:38)
 
-                                
-    Standards: HTML5, CSS3, JavaScript, AJAX
+Framework:
 
-                                
-    Components: JQuery, Bootstrap, Giphy API
+    - HTML5, CSS3, JavaScript
 
-                                
-    Software: Visual Studio Code Editor
+Built With:
 
+    - JQuery, Bootstrap, Google Fonts, SVG
 
-    Version Control: GitHub
+Software:
+
+    - Visual Studio Code Editor
+    - Github for versioning
+
+Contributors:
+
+    - COC : https://github.com/kratuvwxyz/CONTRIBUTE
+
+License:
+
+    - MIT License : https://github.com/kratuvwxyz/LICENSE
 
 
 /* POWERED BY */

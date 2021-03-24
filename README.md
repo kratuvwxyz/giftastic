@@ -1,14 +1,11 @@
-# Game of Gifrones
+<img src="./images/GameOfGif-black.svg" alt="Game of Gifrones" width="250">
 
-Get the latest Game of Thrones gifs from this Giphy.com.
+Get the latest Game of Thrones gifs or search your own from Giphy API.
 
 ### How to play?
 
-<img src="./images/GameOfGif-black.svg" alt="Game of Gifrones" width="250">
-
-- Click navigation buttons to generate your gifs. 
 - Each search gets you 24 gifs.
-- Once you get a gif, it is in static mode. You have to click it to play.
+- Once you get a gif, it is on static mode. You have to click it to play.
 - You can search for a specific topic and it will generate a nav link for you.
 
 ### Prerequisites
@@ -18,26 +15,34 @@ Get the latest Game of Thrones gifs from this Giphy.com.
 ### Version
 
 - **2103181548**
-- Last Update: 21/03/18
+✔ Last Update @done (March 24th 2021, 14:35)
 
-### Standards
+### Framework
 
 - HTML5, CSS3, JavaScript, AJAX
 
-### Components
+### Built With
 
-- JQuery, Bootstrap, Giphy API
+- JQuery, Bootstrap, Giphy API, Google Fonts, SVG
 
 ### Software
 
 - Visual Studio Code Editor
 - Github for versioning
 
-### Thank you
+### Credits
 
 - https://stackoverflow.com/questions/2186096/retrieve-child-img-src-jquery
 
-### New Release
+### CONTRIBUTE
+
+- A [contributing guideline](https://github.com/kratuvwxyz/CONTRIBUTE) available.
+
+### LICENSE
+
+- [MIT](https://github.com/kratuvwxyz/LICENSE) © 2021 Kratu Desai, DESAIGN LLC.
+
+### Upcoming Versioning
 
 - Adding localstorage to save
 - Button to like gifs

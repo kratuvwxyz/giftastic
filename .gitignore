@@ -1,7 +1,3 @@
-# Node build artifacts
-node_modules
-npm-debug.log
-
 # Local development
 *.env
 *.dev
@@ -13,3 +9,5 @@ docker-compose.yml
 
 #Test
 0HN0/
+# find . -type f -name '._*' -delete
+# git rm -r --cached .
